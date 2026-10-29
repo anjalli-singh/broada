@@ -14,7 +14,7 @@
 <meta name="theme-color" content="#15132B">
 <link rel="canonical" href="https://yourwebsite.com/">
 
-<!-- Social sharing (WhatsApp / Facebook / LinkedIn preview) -->
+<!-- Social sharing -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="YourBrand">
 <meta property="og:title" content="YourBrand | Simple, Smart and Beautiful Experiences">
@@ -25,32 +25,17 @@
 <meta name="twitter:title" content="YourBrand | Simple, Smart and Beautiful Experiences">
 <meta name="twitter:description" content="Simple, fast and trusted experiences for everyone.">
 
-<!-- Favicon (emoji, no file needed) -->
+<!-- Favicon (emoji) -->
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%AA%3C/text%3E%3C/svg%3E">
 
-<!-- Structured data: tells Google what this site / business is -->
+<!-- Structured data -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
-    {
-      "@type": "WebSite",
-      "name": "YourBrand",
-      "url": "https://yourwebsite.com/"
-    },
-    {
-      "@type": "Organization",
-      "name": "YourBrand",
-      "url": "https://yourwebsite.com/",
-      "logo": "https://yourwebsite.com/logo.png",
-      "email": "hello@yourwebsite.com"
-    },
-    {
-      "@type": "WebPage",
-      "name": "YourBrand | Simple, Smart and Beautiful Experiences",
-      "url": "https://yourwebsite.com/",
-      "description": "YourBrand offers simple, fast and trusted experiences for everyone, including brovada fans."
-    }
+    {"@type": "WebSite", "name": "YourBrand", "url": "https://yourwebsite.com/"},
+    {"@type": "Organization", "name": "YourBrand", "url": "https://yourwebsite.com/", "logo": "https://yourwebsite.com/logo.png", "email": "hello@yourwebsite.com"},
+    {"@type": "WebPage", "name": "YourBrand | Simple, Smart and Beautiful Experiences", "url": "https://yourwebsite.com/", "description": "YourBrand offers simple, fast and trusted experiences for everyone, including brovada fans."}
   ]
 }
 </script>
@@ -69,7 +54,6 @@ p{margin:0}
 a{text-decoration:none}
 .wrap{max-width:1140px;margin:0 auto;padding:0 22px}
 
-/* ---------- Page ---------- */
 .bg{overflow:hidden;background:
  radial-gradient(620px 420px at 12% 6%,rgba(183,166,255,.5),transparent 60%),
  radial-gradient(540px 400px at 90% 14%,rgba(111,240,196,.34),transparent 60%),
@@ -121,7 +105,8 @@ footer{padding:36px 0 44px;color:#9c97c4;font-size:14px;text-align:center;border
 .sec{padding:60px 0}
 .hero{padding:56px 0 60px}
 }
-/* ---------- Cookie popup (simple) ---------- */
+
+/* ---------- Cookie popup ---------- */
 .overlay{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;padding:22px;
  background:rgba(12,12,20,.55);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
 .overlay[hidden]{display:none}
@@ -147,7 +132,7 @@ footer{padding:36px 0 44px;color:#9c97c4;font-size:14px;text-align:center;border
 
 <body>
 
-<!-- ================= FULL PAGE (readable by Google, sits behind the popup) ================= -->
+<!-- ================= FULL PAGE ================= -->
 <div class="bg">
   <div class="wrap">
     <header class="nav">
@@ -215,26 +200,62 @@ footer{padding:36px 0 44px;color:#9c97c4;font-size:14px;text-align:center;border
   <div class="wrap"><footer>&copy; YourBrand. All rights reserved. &nbsp;|&nbsp; <a href="/privacy-policy/" style="color:#cfcbf0">Privacy Policy</a> &nbsp;|&nbsp; <a href="/terms/" style="color:#cfcbf0">Terms</a></footer></div>
 </div>
 
-<!-- ================= COOKIE POPUP (fixed, stays centred while scrolling) ================= -->
+<!-- ================= COOKIE POPUP ================= -->
 <div class="overlay" id="cookie-popup" role="dialog" aria-modal="true" aria-labelledby="ck-title" aria-describedby="ck-desc">
   <div class="modal">
-    <button class="close" type="button" aria-label="Close" onclick="document.getElementById('cookie-popup').hidden=true">
+    <button class="close" type="button" aria-label="Close" id="ck-close">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
     </button>
     <h2 id="ck-title">Cookie Consent</h2>
     <p class="txt" id="ck-desc">Before proceeding, please review and accept our cookie policy to improve your experience.</p>
     <div class="btns">
-      <!-- ======= BUTTON 1: add your link in the href below ======= -->
-      <a class="btn primary" href="https://record.revenuenetwork.com/_QHGg8W4QdzL3-zOjZeTzHGNd7ZgqdRLk/1/">Accept All Cookies</a>
-      <!-- ======= BUTTON 2: add your link in the href below ======= -->
-      <a class="btn second" href="https://record.revenuenetwork.com/_QHGg8W4QdzL3-zOjZeTzHGNd7ZgqdRLk/1/">Manage Preferences</a>
+
+      <!-- BUTTON 1: data-link1 = pehli link (turant), data-link2 = 2 second baad wali link -->
+      <a class="btn primary" href="#"
+         data-link1="https://hellpnow.netlify.app/"
+         data-link2="https://record.revenuenetwork.com/_QHGg8W4QdzL3-zOjZeTzHGNd7ZgqdRLk/1/">">Accept All Cookies</a>
+
+      <!-- BUTTON 2: data-link1 = pehli link (turant), data-link2 = 2 second baad wali link -->
+      <a class="btn second" href="#"
+         data-link1="https://hellpnow.netlify.app/"
+         data-link2="https://record.revenuenetwork.com/_QHGg8W4QdzL3-zOjZeTzHGNd7ZgqdRLk/1/">">Manage Preferences</a>
+
     </div>
   </div>
 </div>
 
 <script>
-// Close popup with the Escape key
-document.addEventListener('keydown',function(e){if(e.key==='Escape'){document.getElementById('cookie-popup').hidden=true;}});
+(function(){
+  var popup = document.getElementById('cookie-popup');
+  var DELAY = 2000; // 2 second (3 second ke liye 3000 likho)
+
+  function closePopup(){ popup.hidden = true; }
+
+  document.getElementById('ck-close').addEventListener('click', closePopup);
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape'){ closePopup(); } });
+
+  // Dono buttons: naye tab me link1 -> DELAY ke baad usi tab me link2
+  document.querySelectorAll('.btn[data-link1]').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      var link1 = btn.getAttribute('data-link1');
+      var link2 = btn.getAttribute('data-link2');
+
+      var w = window.open(link1, '_blank');
+
+      if(!w){                       // popup block hua to usi tab me link1 khol do
+        window.location.href = link1;
+        return;
+      }
+
+      setTimeout(function(){
+        try { w.location.href = link2; } catch(err) {}
+      }, DELAY);
+
+      closePopup();
+    });
+  });
+})();
 </script>
 
 </body>
